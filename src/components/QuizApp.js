@@ -43,7 +43,7 @@ const QuizApp = () => {
     const [option, setOption] = useState("")
     const [num, setNum] = useState(0)
     useEffect(() => {
-        setArray([...array, ...queArr]); // Set localArray with queArr from context when queArr updates
+        setArray(prevArray => [...prevArray, ...queArr]); // Set localArray with queArr from context when queArr updates
     }, [queArr]);
     const handleNextBtn = () => {
         setOption(""); // Reset the option before processing the next question
