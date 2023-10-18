@@ -7,33 +7,33 @@ const QuizApp = () => {
     const [array, setArray] = useState([
         {
             id: 1,
-            question: "What is the capital of Haryana?",
-            options: ["Yamunanagar", "Panipat", "Gurgaon", "Chandigarh"],
-            answer: "Chandigarh",
+            question: "What temperature does water boil at?",
+            options: ["50°C", "25°C", "100°C", "150°C"],
+            answer: "100°C"
         },
         {
             id: 2,
-            question: "What is the capital of Punjab?",
-            options: ["Patiala", "Ludhiana", "Amritsar", "Chandigarh"],
-            answer: "Chandigarh",
+            question: "Who wrote Julius Caesar, Macbeth and Hamlet?",
+            options: ["Wole Soyinka", "William Shakespeare", "Ngozi Chimamanda Adichie", "Dan Brown"],
+            answer: "William Shakespeare"
         },
         {
             id: 3,
-            question: "What is the capital of India?",
-            options: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
-            answer: "Delhi"
+            question: "What did the crocodile swallow in Peter Pan?",
+            options: ["A Book", "A Computer", "Alarm Clock", "A pair of shoes"],
+            answer: "Alarm Clock"
         },
         {
             id: 4,
-            question: "What is the capital of Uttarakhad?",
-            options: ["Roorkee", "Haridwar", "Dehradun", "Nanital"],
-            answer: "Dehradun"
+            question: "Which is the only mammal that can’t jump?",
+            options: ["Dog", "Elephant", "Goat", "Lion"],
+            answer: "Elephant"
         },
         {
             id: 5,
-            question: "What is capital of Uttar Pradesh?",
-            options: ["GB Nagar", "Lucknow", "Prayagraj", "Agra"],
-            answer: "Lucknow"
+            question: "Who lived at 221B, Baker Street, London?",
+            options: ["Tony Stark", "Morgan Freeman", "Sherlock Holmes", "Samuel L. Jackson"],
+            answer: "Sherlock Holmes"
         },
     ])
     const { queArr } = useContext(QuizContext);
@@ -45,6 +45,9 @@ const QuizApp = () => {
     useEffect(() => {
         setArray(prevArray => [...prevArray, ...queArr]); // Set localArray with queArr from context when queArr updates
     }, [queArr]);
+    // useEffect(() => {
+    //     setArray([...array, ...queArr]); // Set localArray with queArr from context when queArr updates
+    // }, [queArr]);
     const handleNextBtn = () => {
         setOption(""); // Reset the option before processing the next question
 
